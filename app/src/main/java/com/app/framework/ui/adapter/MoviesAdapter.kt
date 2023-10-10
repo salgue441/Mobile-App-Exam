@@ -1,19 +1,19 @@
 package com.app.framework.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.R
+import com.app.data.models.Response
 import com.app.framework.ui.viewholders.MoviesViewHolder
 
-class MoviesAdapter() : RecyclerView.Adapter<MoviesViewHolder>() {
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+class MoviesAdapter(private val moviesList: Response) : RecyclerView.Adapter<MoviesViewHolder>() {
+    override fun getItemCount(): Int = moviesList.movies.size
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
-//        val currentItem = moviesList[position]
-        TODO("NOT YET IMPLEMENTED")
+        val movies = moviesList.movies[position]
+        Log.d("MOVIES", movies.toString())
     }
 
     /**
