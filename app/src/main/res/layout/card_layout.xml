@@ -23,7 +23,7 @@
             android:background="@drawable/rounded_corner_image"/>
 
         <TextView
-            android:id="@+id/descriptionTextView"
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="description_text"/>`
