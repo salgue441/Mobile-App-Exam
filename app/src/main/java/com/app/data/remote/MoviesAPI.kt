@@ -1,9 +1,9 @@
 package com.app.data.remote
 
-import com.app.data.models.Response
+import com.app.data.models.Movies
 import retrofit2.http.GET
 
 interface MoviesAPI {
-    @GET("/movies/popular/")
-    suspend fun getPopularMovies(): Response
+    @GET("movie/popular/")
+    suspend fun getPopularMovies(): Movies
 }

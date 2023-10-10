@@ -5,15 +5,40 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.R
-import com.app.data.models.Response
+import com.app.data.models.Movies
 import com.app.framework.ui.viewholders.MoviesViewHolder
+import com.app.utils.Constants
+import com.bumptech.glide.Glide
 
-class MoviesAdapter(private val moviesList: Response) : RecyclerView.Adapter<MoviesViewHolder>() {
-    override fun getItemCount(): Int = moviesList.movies.size
+/**
+ * Adpater for the movies cards
+ * @property movies: [Movies] - JSON from the TMDB api
+ * @constructor [MoviesAdapter]
+ * @since 1.0.0
+ */
+class MoviesAdapter(private val movies: Movies) : RecyclerView.Adapter<MoviesViewHolder>() {
+    /**
+     * Returns the movies size
+     * @since 1.0.0
+     */
+    override fun getItemCount(): Int = movies.results.size
 
+    /**
+     * Sets the cards contents
+     *
+     * @param holder: [MoviesViewHolder] - View holder
+     * @param position: [Int] - Postional index
+     * @since 1.0.0
+     */
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
-        val movies = moviesList.movies[position]
-        Log.d("MOVIES", movies.toString())
+        val movies = movies.results[position]
+
+        Glide.with(holder.itemView.context)
+            .load(Constants.IMAGE_URL + movies.posterPath)
+            .into(holder.imageView)
+
+        holder.title.text = movies.title
+        holder.description.text = movies.overview
     }
 
     /**

@@ -15,4 +15,5 @@ import com.app.R
 class MoviesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val imageView: ImageView = itemView.findViewById(R.id.postImageView)
     val title: TextView = itemView.findViewById(R.id.titleTextView)
+    val description: TextView = itemView.findViewById(R.id.descriptionTextView)
 }

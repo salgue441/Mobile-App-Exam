@@ -20,12 +20,23 @@
             android:src="@drawable/ic_launcher_foreground"
             android:scaleType="centerCrop"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/rounded_corner_image"/>
+            android:background="@drawable/rounded_corner_image"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="description_text"/>`
+            android:text="description_text"
+            android:textSize="20dp"
+            android:textFontWeight="@integer/material_motion_duration_short_2"
+            android:layout_marginBottom="4dp"
+            />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="description_text" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
