@@ -7,6 +7,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Handles the connection to the API
+ */
 object MoviesClient {
     private val gsonFactory = GsonConverterFactory.create()
     val logging = HttpLoggingInterceptor().apply {
